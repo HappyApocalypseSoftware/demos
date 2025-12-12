@@ -1,0 +1,3 @@
+ipython~=9.7
+requests~=2.32
+safehouse==0.0.7

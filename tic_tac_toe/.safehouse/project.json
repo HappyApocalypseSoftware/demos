@@ -1,0 +1,30 @@
+{
+    "name": "local_project",
+    "organization": "local_organization",
+    "events": [
+        {
+          "name": "game_end",
+          "fields": {
+            "game_id": "str",
+            "result": "str",
+            "winner": "str"
+          }
+        },
+        {
+          "name": "game_start",
+          "fields": {
+            "game_id": "str",
+            "side": "str"
+          }
+        },
+        {
+          "name": "move",
+          "fields": {
+            "game_id": "str",
+            "column": "int",
+            "side": "str",
+            "row": "int"
+          }
+        }
+    ]
+}
