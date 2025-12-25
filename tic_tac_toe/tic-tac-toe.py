@@ -36,7 +36,7 @@ class Board:
     
     @property
     def is_finished(self) -> bool:
-        return self.winner or len(self.empty_spaces) == 0
+        return (self.winner in ('x', 'y')) or len(self.empty_spaces) == 0
 
     def computer_move(self):
         choices = self.empty_spaces
@@ -126,7 +126,7 @@ def run():
         board.play()
         print(board)
         events.game_end.send(game_id=game_id, result='completed', winner=board.winner)
-    except Exception as e:
+    except Exception:
         events.game_end.send(game_id=game_id, result='aborted', winner='none')
 
 if __name__ == "__main__":
