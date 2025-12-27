@@ -1,6 +1,6 @@
 {
-    "name": "local_project",
-    "organization": "local_organization",
+    "name": "tic-tac-toe",
+    "organization": "local",
     "events": [
         {
           "name": "game_end",

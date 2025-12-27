@@ -3,10 +3,18 @@
 from random import randint
 from typing import List, Optional, Tuple
 
+import safehouse
 from safehouse.events import sdk as events_sdk
 
 
-events = events_sdk.init(origin='game')
+project = safehouse.register_project(
+    name='tic-tac-toe',
+    org_name='local',
+    mode='local',
+)
+
+
+events = events_sdk.init(origin='game', project=project)
 game_id = randint(0, 1000000)
 
 
