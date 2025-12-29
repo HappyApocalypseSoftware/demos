@@ -1,12 +1,13 @@
 {
     "name": "tic-tac-toe",
-    "organization": "local",
+    "organization": "safehouse",
     "events": [
         {
           "name": "game_end",
           "fields": {
             "game_id": "str",
             "result": "str",
+            "user_id": "uuid",
             "winner": "str"
           }
         },
@@ -14,7 +15,8 @@
           "name": "game_start",
           "fields": {
             "game_id": "str",
-            "side": "str"
+            "side": "str",
+            "user_id": "uuid"
           }
         },
         {
@@ -23,7 +25,8 @@
             "game_id": "str",
             "column": "int",
             "side": "str",
-            "row": "int"
+            "row": "int",
+            "user_id": "uuid"
           }
         }
     ]

@@ -4,17 +4,18 @@ from random import randint
 from typing import List, Optional, Tuple
 
 import safehouse
-from safehouse.events import sdk as events_sdk
 
 
-project = safehouse.register_project(
+project = safehouse.activate_project(
+    mode='local', # change to live when we have live
     name='tic-tac-toe',
-    org_name='local',
-    mode='local',
+    org_name='safehouse',
 )
+user_id = safehouse.user.id_for("local")
 
 
-events = events_sdk.init(origin='game', project=project)
+events = project.events
+events.origin = 'game'
 game_id = randint(0, 1000000)
 
 
@@ -72,11 +73,11 @@ class Board:
         if self.rows[row][column] != ' ':
             return False, "already occupied"
         self.rows[row][column] = side
-        events.move.send(game_id=game_id, side=side, row=row, column=column)
+        events.move.send(user_id=user_id, game_id=game_id, side=side, row=row, column=column)
         return True, None
 
     def play(self):
-        events.game_start.send(game_id=game_id, side='x')
+        events.game_start.send(user_id=user_id, game_id=game_id, side='x')
         while not self.is_finished:
             print(self)
             try:
@@ -133,9 +134,9 @@ def run():
         board = Board()
         board.play()
         print(board)
-        events.game_end.send(game_id=game_id, result='completed', winner=board.winner)
+        events.game_end.send(user_id=user_id, game_id=game_id, result='completed', winner=board.winner)
     except Exception:
-        events.game_end.send(game_id=game_id, result='aborted', winner='none')
+        events.game_end.send(user_id=user_id, game_id=game_id, result='aborted', winner='none')
 
 if __name__ == "__main__":
     run()
