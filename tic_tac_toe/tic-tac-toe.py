@@ -7,9 +7,9 @@ import safehouse
 
 
 project = safehouse.activate_project(
-    mode='local', # change to live when we have live
     name='tic-tac-toe',
     org_name='safehouse',
+    runtime_mode='local', # change to live when we have live
 )
 user_id = safehouse.user.id_for("local")
 
