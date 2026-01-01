@@ -466,7 +466,7 @@ wheels = [
 
 [[package]]
 name = "safehouse"
-version = "0.0.10"
+version = "0.0.12"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "docker" },
@@ -476,9 +476,9 @@ dependencies = [
     { name = "requests" },
     { name = "ruff" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/21/52/844063b4567bbb80988c425a62e4e8202dbf5a741ca174c5601a630ff452/safehouse-0.0.10.tar.gz", hash = "sha256:43d13f3e0ffcbd4e91838eb348e63e229a27fad4273ca3a30a7c6d2e8f487675", size = 18790, upload-time = "2026-01-01T00:47:55.057Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/a9/8c/538e4e0e53acd6a019adbf7857c42c2bc837b6b03756d50449d196ab9e14/safehouse-0.0.12.tar.gz", hash = "sha256:cc56561d2979cca69c89c0104d51f7903068f4913ba358e96c7dddd06b0470ab", size = 19879, upload-time = "2026-01-01T01:27:22.344Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/47/a9/d8d92fa08ccf9ff97d9500879c48b0460657ca42f00cb2bf6d6c82fac490/safehouse-0.0.10-py3-none-any.whl", hash = "sha256:8bed6d0d6e326d5ac1de303aae800a92264ce2eb46ba9b19a51d74e86f98b033", size = 31469, upload-time = "2026-01-01T00:47:53.778Z" },
+    { url = "https://files.pythonhosted.org/packages/db/2a/778c45549c98813e2bbb7860d56c926544daac691d2d72f25baeee85a894/safehouse-0.0.12-py3-none-any.whl", hash = "sha256:0d760284cdc08824030a610b8f9be7f08827ef2fb1150b2de293c7fe0f4a5cb7", size = 32556, upload-time = "2026-01-01T01:27:23.624Z" },
 ]
 
 [[package]]
@@ -509,7 +509,7 @@ dependencies = [
 requires-dist = [
     { name = "ipython", specifier = "~=9.7" },
     { name = "requests", specifier = "~=2.32" },
-    { name = "safehouse", specifier = ">=0.0.10" },
+    { name = "safehouse", specifier = ">=0.0.12" },
 ]
 
 [[package]]
